@@ -5,7 +5,6 @@ export default StyleSheet.create({
         flex: 1,
         backgroundColor: "#fff",
         alignItems: "center",
-        marginTop: 40
     },
     header: {
         fontSize: 30,
@@ -16,4 +15,7 @@ export default StyleSheet.create({
         fontSize: 18,
         height: 44,
     },
+    list_body: {
+        marginTop: 30
+    }
 });

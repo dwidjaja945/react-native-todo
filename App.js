@@ -1,21 +1,37 @@
 import React from "react";
 import { StyleSheet, Text, View, FlatList } from "react-native";
+import { createStackNavigator } from 'react-navigation';
 import styles from './styles/app_style';
 
-import TodoList from './components/TodoList';
+import HomeScreen from './components/Home';
+import TodoListItem from './components/TodoListItem';
 
-export default class App extends React.Component {
-	render() {
-		return (
-			<View style={styles.container}>
-
-				<View className="header" >
-					<Text style={styles.header}>Todo List</Text>
-				</View>
-
-				<TodoList />
-
-			</View>
-		);
+const App = createStackNavigator(
+	{
+		Home: HomeScreen,
+		TodoListItem: TodoListItem
+	},
+	{
+		initialRouteName: 'Home',
 	}
-}
+);
+
+export default App
+
+// const RootStack = createStackNavigator(
+//     {
+// 		  Home: HomeScreen,
+// 		  ListItem : ListItemScreen
+//     },
+//     {
+//         initialRouteName: 'Home',
+//     }
+// );
+
+// export default class App extends React.Component {
+// 	render() {
+// 		return (
+// 			<RootStack />
+// 		);
+// 	}
+// }
